@@ -1,0 +1,33 @@
+<div class="common-tbl">
+  <div class="card-body card-bdy-ngx">
+    <ngx-datatable class="material fullscreen striped ngx-datatable" [columnMode]="'force'" [headerHeight]="40"
+      [footerHeight]="40" [rowHeight]="40" [columns]="columns" [rows]="rows" [limit]="10" [externalPaging]="true"
+      [count]="page.count" (page)='setPage($event)' [offset]="page.number-1">
+      <ngx-datatable-column prop="firstName" [width]="40" name="First Name" [sortable]="false" [width]="80"
+        [resizeable]="false">
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="lastName" [width]="40" name="Last Name" [sortable]="false" [width]="80"
+        [resizeable]="false">
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="dateofbirth" [width]="40" name="Date Of Birth" [sortable]="false" [width]="80"
+        [resizeable]="false">
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="gender" [width]="40" name="Gender" [sortable]="false" [width]="80"
+        [resizeable]="false">
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="state" [width]="40" name="State" [sortable]="false" [width]="80" [resizeable]="false">
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="city" [width]="40" name="City" [sortable]="false" [width]="80" [resizeable]="false">
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="action" name="Action" [sortable]="false" [width]="15">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+         
+          <i (click)="openEditModal()" class="fa fa-pencil-square-o datatableEdit" aria-hidden="true"></i>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+    <ng-template #indexTemplate let-value="value">
+      <strong>{{value}}</strong>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<h3> Login Form</h3>
+<app-error-view [appErrors]="appErrors"></app-error-view>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+
+
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label>Email</label>
+        <input type="text" formControlName="userId" class="form-control" />
+        <p *ngIf="loginForm.controls['userId'].touched && loginForm.controls['userId'].invalid">
+          <span *ngIf="loginForm.controls['userId'].errors['required']" [ngStyle]="{'color':'red'}">User Id
+            is Required</span>
+
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label>Password</label>
+        <input type="password" formControlName="password" class="form-control" />
+        <p *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+          <span *ngIf="loginForm.controls['password'].errors['required']" [ngStyle]="{'color':'red'}">Password
+            is Required</span>
+
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+  </div>
+
+</form>

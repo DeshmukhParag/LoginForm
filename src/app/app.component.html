@@ -1,0 +1,20 @@
+<ul>  
+     <li style="float:right"><a href="JavaScript:void(0);" routerLink="/login"
+            *ngIf="!authenticationService.isLoggedIn">Login</a></li>
+    <li style="float:right"><a href="JavaScript:void(0);" routerLink="/user-add"
+            *ngIf="!authenticationService.isLoggedIn">Registration</a>
+    </li>
+    <li style="float:right"><a href="JavaScript:void(0);" (click)="logout()"
+            *ngIf="authenticationService.isLoggedIn">Logout</a>
+    </li>
+    <li style="float:right"><a href="JavaScript:void(0);" routerLink="/my-profile"
+            *ngIf="authenticationService.isLoggedIn">Profile</a>
+    </li>
+    
+    <li style="float:right"><a class="active" href="JavaScript:void(0);" routerLink="/dashboard"
+            *ngIf="authenticationService.isLoggedIn">Dashboard</a></li>
+    <li style="float:right"><a href="JavaScript:void(0);" routerLink="/user-grid"
+            *ngIf="authenticationService.isLoggedIn">User Management</a></li>
+</ul>
+
+<router-outlet></router-outlet>
